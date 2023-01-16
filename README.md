@@ -4,7 +4,7 @@
 
 I moved to Harare a few months ago and the one thing I struggled with was finding accommodation without having to be paying someone a lot of money just so they can give me contact details of someone who owns a house and is renting out rooms. I thought to myself why not create an application that allows users to list rooms that they have available for rent and also allows users to book rooms that are available on the platform. The application has two types of users: 1. Home owners 2. Renters
 
-- Home owners have to have an account in order to list rooms/property on the platform. They can list as many rooms as they want. They can also delete rooms that they have listed. They can also view all the bookings that have been made for their rooms. So I thought to myself why not create an API that allows users/home owners to create an account, login, create a room, view rooms, view room details, rent a room, view book rentals, view rental details, cancel a rental, and delete a room.
+- Home owners have to have an account in order to list rooms/property on the platform. They can list as many rooms as they want. They can also delete rooms that they have listed. They can also view all the bookings that have been made for their rooms.
 
 - Renters have to have an account in order to book rooms. They can only book rooms that have been listed by home owners. They can also cancel bookings that they have made. They can also view all the bookings that they have made. Potential renters however can also view all the rooms that are available on the platform without having to have an account.
 
