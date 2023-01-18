@@ -23,6 +23,7 @@
   "homepage": "https://github.com/xeroxzen/rent-a-room#readme",
   "dependencies": {
     "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "eslint": "^8.32.0",
     "express": "^4.18.2",
