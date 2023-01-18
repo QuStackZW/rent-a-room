@@ -1,15 +1,15 @@
 import express from "express";
-import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import routes from "./routes";
+import cors from "cors";
 
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 5000;
+app.use(cors());
 
-app.use(bodyParser.json());
+const port = process.env.PORT || 5000;
 
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
