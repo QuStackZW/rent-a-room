@@ -2,10 +2,10 @@
   "name": "server",
   "version": "1.0.0",
   "description": "Rent a room",
-  "main": "server.js",
+  "main": "app.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon --experimental-modules --es-module-specifier-resolution=node src/server.js",
+    "start": "nodemon --experimental-modules --es-module-specifier-resolution=node src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

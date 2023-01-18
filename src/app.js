@@ -1,15 +1,30 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-// import routes from './routes';
-// import middleware from './middleware';
+import express from "express";
+import dotenv from "dotenv";
+import mongoose from "mongoose";
+import routes from "./routes";
+import cors from "cors";
+
+dotenv.config();
 
 const app = express();
+app.use(cors());
 
-app.use(bodyParser.json());
+const port = process.env.PORT || 5000;
 
-// app.use(middleware.logger);
-// app.use(middleware.authenticator);
-// app.use(routes);
-// app.use(middleware.errorHandler);
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
-module.exports = app;
+const db = mongoose.connection;
+
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", function () {
+  console.log("Connected to MongoDB");
+});
+
+app.use("/", routes);
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
