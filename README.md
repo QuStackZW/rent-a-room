@@ -53,6 +53,84 @@ Create an API that allows users to create an account, login, create a room, view
 - Coveralls
 - Heroku
 
+## Operating Logic
+
+### Models
+1. User: This model could contain information about the users of the API, such as their name, email address, and password.
+
+2. Property: This model could contain information about the properties that are available for rent, such as their address, number of bedrooms, number of bathrooms, and rent amount.
+
+3. RentalListing: This model could contain information about the available rental listings, such as the property they are associated with, the start and end date of the rental period, and the rent amount.
+
+4. Review: This model could contain information about reviews of the properties, such as the property they are associated with, the user that wrote the review, and the content of the review.
+
+5. Image: This model could contain information about images associated with the properties, such as the property they are associated with, the image URL, and the caption.
+
+6. Booking: This model could contain information about bookings made by users, such as the user that made the booking, the rental listing that was booked, and the start and end date of the booking.
+
+### Controllers
+Controllers are responsible for handling incoming HTTP requests and returning appropriate responses. Here are some suggested controllers for a Node.js API that allows people to search for rooms or full houses for rent:
+
+1. UserController: This controller could handle requests related to user authentication and registration, such as login and signup.
+
+2. PropertyController: This controller could handle requests related to properties, such as listing properties, retrieving property details, and updating property information.
+
+3. RentalListingController: This controller could handle requests related to rental listings, such as creating new listings, retrieving available listings, and updating existing listings.
+
+4. ReviewController: This controller could handle requests related to reviews, such as creating new reviews, retrieving reviews for a specific property, and updating existing reviews.
+
+4. ImageController: This controller could handle requests related to images, such as uploading new images, retrieving images for a specific property, and updating existing images.
+
+5. BookingController: This controller could handle requests related to bookings, such as creating new bookings, retrieving booking information, and canceling existing bookings.
+
+## Routes
+
+Routes are responsible for mapping URLs to specific controllers and actions. Here are some suggested routes for a Node.js API that allows people to search for rooms or full houses for rent:
+
+1. /users: This route could handle requests related to user authentication and registration, such as login and signup.
+
+2. /properties: This route could handle requests related to properties, such as listing properties, retrieving property details, and updating property information.
+
+3. /rental-listings: This route could handle requests related to rental listings, such as creating new listings, retrieving available listings, and updating existing listings.
+
+4. /reviews: This route could handle requests related to reviews, such as creating new reviews, retrieving reviews for a specific property, and updating existing reviews.
+
+5. /images: This route could handle requests related to images, such as uploading new images, retrieving images for a specific property, and updating existing images.
+
+6. /bookings: This route could handle requests related to bookings, such as creating new bookings, retrieving booking information, and canceling existing bookings.
+
+## Services
+
+Services are responsible for encapsulating the business logic of your application. They are a great way to separate the application's concerns and make the code more maintainable and testable. Here are some suggested services for a Node.js API that allows people to search for rooms or full houses for rent:
+
+1. AuthenticationService: This service could handle tasks related to user authentication, such as verifying user credentials and generating access tokens.
+
+2. PropertyService: This service could handle tasks related to properties, such as creating new properties, retrieving property details, and updating property information.
+
+3. RentalListingService: This service could handle tasks related to rental listings, such as creating new listings, retrieving available listings, and updating existing listings.
+
+4. ReviewService: This service could handle tasks related to reviews, such as creating new reviews, retrieving reviews for a specific property, and updating existing reviews.
+
+5. ImageService: This service could handle tasks related to images, such as uploading new images, retrieving images for a specific property, and updating existing images.
+
+6. BookingService: This service could handle tasks related to bookings, such as creating new bookings, retrieving booking information, and canceling existing bookings.
+
+## Utilities
+
+Utils are helper functions that can be used throughout the application to perform common tasks, such as validation, error handling, and data formatting. Here are some examples of utility functions that could be used to build an API for searching for rooms or full houses for rent:
+
+1. validateUserData: This function could validate the data sent in a user registration or update request, such as checking that all required fields are present and that the email address is in the correct format.
+
+2. formatError: This function could format error messages in a consistent way for easier debugging and reporting.
+
+3. handleMongooseValidationError: This function could handle validation errors thrown by Mongoose, such as converting them to a more user-friendly format.
+
+4. calculateDistance: This function could calculate the distance between two GPS coordinates, which could be used to filter properties based on their proximity to a given location.
+
+5. handleImageUpload: This function could handle image uploads, such as saving the image to a server and generating a URL to be saved in the database.
+
+6. sendEmail: This function could handle sending emails, such as sending booking confirmation emails or password reset emails.
+
 ## API Endpoints
 
 | Endpoint             | Functionality    | HTTP Method | Access Control |
