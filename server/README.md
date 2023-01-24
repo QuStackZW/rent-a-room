@@ -56,17 +56,13 @@ Create an API that allows users to create an account, login, create a room, view
 ## Operating Logic
 
 ### Models
-1. User: This model could contain information about the users of the API, such as their name, email address, and password.
+1. HomeOwner: This model could contain information specific to home owners, such as their name, contact information, and a list of properties that they have listed for rent. It could have fields such as name, email, phone, address and properties(Array of ObjectId referencing to properties collection)
 
-2. Property: This model could contain information about the properties that are available for rent, such as their address, number of bedrooms, number of bathrooms, and rent amount.
+2. Renter: This model could contain information specific to renters, such as their name, contact information, and a list of properties that they have shown interest in. It could have fields such as name, email, phone, address and properties(Array of ObjectId referencing to properties collection)
 
-3. RentalListing: This model could contain information about the available rental listings, such as the property they are associated with, the start and end date of the rental period, and the rent amount.
+3. Property: This model could contain information specific to properties, such as location, size, type, and owner. It could have fields such as location, size, type,owner(ObjectId referencing to HomeOwner collection), renter(ObjectId referencing to renter collection), status(available, rented)
 
-4. Review: This model could contain information about reviews of the properties, such as the property they are associated with, the user that wrote the review, and the content of the review.
-
-5. Image: This model could contain information about images associated with the properties, such as the property they are associated with, the image URL, and the caption.
-
-6. Booking: This model could contain information about bookings made by users, such as the user that made the booking, the rental listing that was booked, and the start and end date of the booking.
+4. Booking: This model could contain information specific to bookings, such as start date, end date, renter, and property. It could have fields such as startDate, endDate, renter(ObjectId referencing to renter collection), property(ObjectId referencing to property collection)
 
 ### Controllers
 Controllers are responsible for handling incoming HTTP requests and returning appropriate responses. Here are some suggested controllers for a Node.js API that allows people to search for rooms or full houses for rent:

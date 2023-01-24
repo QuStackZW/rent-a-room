@@ -6,7 +6,7 @@ dotenv.config();
 
 const app = express();
 
-app.use(express.json({ limit: "30mb", extended: true }));
+app.use(express.json({ limit: "50mb", extended: true }));
 app.use(cors());
 
 const CONNECTION_URL = process.env.ATLAS_URI;
