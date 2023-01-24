@@ -5,7 +5,8 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon --experimental-modules --trace-warnings --es-module-specifier-resolution=node app.js",
+    "dev": "NODE_ENV=dev nodemon src/app.js",
+    "start": "nodemon src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
