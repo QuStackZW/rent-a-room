@@ -7,7 +7,7 @@ const propertySchema = new Schema({
     size: { type: String, required: true },
     price: { type: String, required: true },
     description: { type: String, required: true },
-    renter: { type: mongoose.Types.ObjectId, ref: "Renter", required: true },
+    renter: { type: mongoose.Types.ObjectId, ref: "Renter", required: false },
     homeOwner: { type: mongoose.Types.ObjectId, ref: "HomeOwner", required: true },
     type: { type: String, required: true },
     status: { type: String, required: true },
