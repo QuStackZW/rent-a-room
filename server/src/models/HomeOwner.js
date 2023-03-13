@@ -9,7 +9,7 @@ const homeOwnerSchema = new Schema({
     email: { type: String, required: true, unique: true },
     phoneNumber: { type: String, required: true, unique: true },
     nationalId: { type: String, required: true, unique: true },
-    address: { type: String, required: true },
+    homeAddress: { type: String, required: true },
     properties: [
         { type: mongoose.Types.ObjectId, ref: "Property", required: true },
     ],
