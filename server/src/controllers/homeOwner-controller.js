@@ -16,7 +16,7 @@ export const getAllHomeOwners = async (req, res, next) => {
 
 // Register Method for HomeOwner
 export const register = async (req, res, next) => {
-    const { firstName, middleName, lastName, email, phoneNumber, nationalId, homeAddress, properties, password } = req.body;
+    const { firstName, middleName, lastName, email, phoneNumber, nationalId, homeAddress, password } = req.body;
     let existingHomeOwner;
 
     try {
@@ -36,8 +36,8 @@ export const register = async (req, res, next) => {
         phoneNumber,
         nationalId,
         homeAddress,
-        properties: [],
         password: hashedPassword,
+        properties: [],
     });
 
     try {

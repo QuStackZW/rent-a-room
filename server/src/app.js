@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import homeOwnerRouter from "./routes/homeOwner-routes.js";
+import propertyRouter from "./routes/property-routes.js";
 import cors from "cors";
 import dotenv from "dotenv";
 dotenv.config();
@@ -12,6 +13,7 @@ app.use(cors());
 
 // Routes
 app.use("/api/v1/homeowners", homeOwnerRouter);
+app.use("/api/v1/properties", propertyRouter);
 
 const CONNECTION_URL = process.env.ATLAS_URI;
 const PORT = process.env.PORT || 5001;

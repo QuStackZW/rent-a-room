@@ -23,131 +23,168 @@ import Property from "../models/Property";
 // 23. Return by pet policy
 // 24. Return by smoking policy
 
+// 1. Create a Property
+export const createProperty = async (req, res, next) => {
+  const {
+    location,
+    streetAddress,
+    suburb,
+    image,
+    city,
+    size,
+    price,
+    description,
+    homeOwner,
+  } = req.body;
+
+  const property = new Property({
+    location,
+    streetAddress,
+    suburb,
+    image,
+    city,
+    size,
+    price,
+    description,
+    homeOwner,
+  });
+
+  try {
+    await property.save();
+  } catch (err) {
+    return console.log(err);
+  }
+
+  return res.status(201).json({ property }); //201 => property is created
+};
+
 // 1. Using the populate method
 export const getAllProperties = async (req, res, next) => {
-    let properties;
-    try {
-        properties = await Property.find().populate("homeOwner");
-    } catch (err) {
-        return console.error(err);
-    }
-    if (!properties) {
-        return res.status(404).json({ message: "Property not found" });
-    }
-    return res.status(200).json({ properties });
+  let properties;
+  try {
+    properties = await Property.find().populate("homeOwner");
+  } catch (err) {
+    return console.error(err);
+  }
+  if (!properties) {
+    return res.status(404).json({ message: "Property not found" });
+  }
+  return res.status(200).json({ properties });
 };
 
 // 2. Using the find method
-export const findProperty = async (req, res, next) => {
-    let properties;
-    try {
-        properties = await Property.find();
-    } catch (err) {
-        return console.error(err);
-    }
-    if (!properties) {
-        return res.status(404).json({ message: "Property not found" });
-    }
-    return res.status(200).json({ properties });
-}
+export const getProperty = async (req, res, next) => {
+  let properties;
+  try {
+    properties = await Property.find();
+  } catch (err) {
+    return console.error(err);
+  }
+  if (!properties) {
+    return res.status(404).json({ message: "Property not found" });
+  }
+  return res.status(200).json({ properties });
+};
 
 // 3. Using the aggregate method
 export const aggregateProperty = async (req, res, next) => {
-    let properties;
-    try {
-        properties = await Property.aggregate();
-    } catch (err) {
-        return console.error(err);
-    }
-    if (!properties) {
-        return res.status(404).json({ message: "Property not found" });
-    }
-    return res.status(200).json({ properties });
-}
+  let properties;
+  try {
+    properties = await Property.aggregate();
+  } catch (err) {
+    return console.error(err);
+  }
+  if (!properties) {
+    return res.status(404).json({ message: "Property not found" });
+  }
+  return res.status(200).json({ properties });
+};
 
 // 4. Using the map method
 export const mapProperty = async (req, res, next) => {
-    let properties;
-    try {
-        properties = await Property.find().map();
-    } catch (err) {
-        return console.error(err);
-    }
-    if (!properties) {
-        return res.status(404).json({ message: "Property not found" });
-    }
-    return res.status(200).json({ properties });
-}
+  let properties;
+  try {
+    properties = await Property.find().map();
+  } catch (err) {
+    return console.error(err);
+  }
+  if (!properties) {
+    return res.status(404).json({ message: "Property not found" });
+  }
+  return res.status(200).json({ properties });
+};
 
 // 5. Using the forEach method
 export const forEachProperty = async (req, res, next) => {
-    let properties;
-    try {
-        properties = await Property.find().forEach();
-    } catch (err) {
-        return console.error(err);
-    }
-    if (!properties) {
-        return res.status(404).json({ message: "Property not found" });
-    }
-    return res.status(200).json({ properties });
-}
+  let properties;
+  try {
+    properties = await Property.find().forEach();
+  } catch (err) {
+    return console.error(err);
+  }
+  if (!properties) {
+    return res.status(404).json({ message: "Property not found" });
+  }
+  return res.status(200).json({ properties });
+};
 
 // 6. Using the for loop
 export const forProperty = async (req, res, next) => {
-    let properties;
-    try {
-        properties = await Property.find().for();
-    } catch (err) {
-        return console.error(err);
-    }
-    if (!properties) {
-        return res.status(404).json({ message: "Property not found" });
-    }
-    return res.status(200).json({ properties });
-}
+  let properties;
+  try {
+    properties = await Property.find().for();
+  } catch (err) {
+    return console.error(err);
+  }
+  if (!properties) {
+    return res.status(404).json({ message: "Property not found" });
+  }
+  return res.status(200).json({ properties });
+};
 
 // 7. Return by suburb
 export const getPropertiesBySuburb = async (req, res, next) => {
-    const { suburb } = req.params;
-    let properties;
-    try {
-        properties = await Property.find({ suburb });
-    } catch (err) {
-        return console.error(err);
-    }
-    if (!properties) {
-        return res.status(404).json({ message: "Property not found" });
-    }
-    return res.status(200).json({ properties });
-}
+  const { suburb } = req.params;
+  let properties;
+  try {
+    properties = await Property.find({ suburb });
+  } catch (err) {
+    return console.error(err);
+  }
+  if (!properties) {
+    return res.status(404).json({ message: "Property not found" });
+  }
+  return res.status(200).json({ properties });
+};
 
 // 8. Return by city
 export const getPropertiesByCity = async (req, res, next) => {
-    const { city } = req.params;
-    let properties;
-    try {
-        properties = await Property.find({ city });
-    } catch (err) {
-        return console.error(err);
-    }
-    if (!properties) {
-        return res.status(404).json({ message: "Property not found" });
-    }
-    return res.status(200).json({ properties });
-}
+  const { city } = req.params;
+  let properties;
+  try {
+    properties = await Property.find({ city });
+  } catch (err) {
+    return console.error(err);
+  }
+  if (!properties) {
+    return res.status(404).json({ message: "Property not found" });
+  }
+  return res.status(200).json({ properties });
+};
 
 // 11. Return by similar properties
 export const getPropertiesBySimilarProperties = async (req, res, next) => {
-    const { similarProperties } = req.params;
-    let properties;
-    try {
-        properties = await Property.find({ similarProperties });
-    } catch (err) {
-        return console.error(err);
-    }
-    if (!properties) {
-        return res.status(404).json({ message: "Property not found" });
-    }
-    return res.status(200).json({ properties });
-}
+  const { similarProperties } = req.params;
+  let properties;
+  try {
+    properties = await Property.find({ similarProperties });
+  } catch (err) {
+    return console.error(err);
+  }
+  if (!properties) {
+    return res.status(404).json({ message: "Property not found" });
+  }
+  return res.status(200).json({ properties });
+};
+
+// 13. Delete a Property
