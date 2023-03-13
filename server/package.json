@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "NODE_ENV=dev nodemon src/app.js",
-    "start": "nodemon src/app.js",
+    "start": "NODE_OPTIONS='--experimental-specifier-resolution=node' nodemon src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/xeroxzen/rent-a-room#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
@@ -32,7 +33,9 @@
     "express": "^4.18.2",
     "jest": "^29.3.1",
     "mongoose": "^6.8.3",
-    "nodemon": "^2.0.20",
     "supertest": "^6.3.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
   }
 }

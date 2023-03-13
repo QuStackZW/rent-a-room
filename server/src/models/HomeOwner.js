@@ -11,7 +11,7 @@ const homeOwnerSchema = new Schema({
     nationalId: { type: String, required: true, unique: true },
     homeAddress: { type: String, required: true },
     properties: [
-        { type: mongoose.Types.ObjectId, ref: "Property", required: true },
+        { type: mongoose.Types.ObjectId, ref: "Property", required: false },
     ],
     password: { type: String, required: true, minlength: 8 },
     createdAt: { type: Date, default: Date.now },
